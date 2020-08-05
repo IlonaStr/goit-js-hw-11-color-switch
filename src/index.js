@@ -9,7 +9,7 @@ const colors = [
     '#795548',
   ];
 
-  const body = document.querySelector('body');
+  const body = document.querySelector('.body');
   const startButton = document.querySelector('[data-action="start"]');
   const stopButton = document.querySelector('[data-action="stop"]');
 
@@ -21,9 +21,9 @@ const colors = [
   startButton.addEventListener('click', () => {
     timerID = setInterval(() => {
       const number = randomIntegerFromInterval(0, colors.length);
+      document.body.style.backgroundColor = colors[number];
       console.log(number);
-      body.style.backgroundColor = colors[randomIntegerFromInterval(0, colors.length - 1)]
-    }, 1000);
+      }, 1000);
     startButton.setAttribute('disabled', 'true')
   });
 
